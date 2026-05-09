@@ -1,0 +1,22 @@
+[
+  { "name": "Stripe", "domain": "stripe.com", "category": "Payments", "asymmetric": false, "scheme": "HMAC-SHA256", "docs": "https://docs.stripe.com/webhooks#verify-official-libraries" },
+  { "name": "GitHub", "domain": "github.com", "category": "Developer tools", "asymmetric": false, "scheme": "HMAC-SHA256", "docs": "https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries" },
+  { "name": "Shopify", "domain": "shopify.com", "category": "E-commerce", "asymmetric": false, "scheme": "HMAC-SHA256", "docs": "https://shopify.dev/docs/apps/build/webhooks/subscribe/https#step-3-verify-the-webhook" },
+  { "name": "Slack", "domain": "slack.com", "category": "Communication", "asymmetric": false, "scheme": "HMAC-SHA256", "docs": "https://api.slack.com/authentication/verifying-requests-from-slack" },
+  { "name": "Twilio", "domain": "twilio.com", "category": "Communications", "asymmetric": false, "scheme": "HMAC-SHA1", "docs": "https://www.twilio.com/docs/usage/webhooks/webhooks-security" },
+  { "name": "PayPal", "domain": "paypal.com", "category": "Payments", "asymmetric": true, "scheme": "RSA (rotating certs)", "docs": "https://developer.paypal.com/api/rest/webhooks/rest/#link-verifywebhooksignature" },
+  { "name": "Apple App Store", "domain": "apple.com", "category": "App stores", "asymmetric": true, "scheme": "JWS / ES256", "docs": "https://developer.apple.com/documentation/appstoreservernotifications/responsebodyv2" },
+  { "name": "Google Play RTDN", "domain": "play.google.com", "category": "App stores", "asymmetric": true, "scheme": "OIDC JWT / RS256", "docs": "https://cloud.google.com/pubsub/docs/authenticate-push-subscriptions" },
+  { "name": "Auth0", "domain": "auth0.com", "category": "Identity", "asymmetric": false, "scheme": "Bearer token", "docs": "https://auth0.com/docs/customize/log-streams/custom-log-streams" },
+  { "name": "Clerk", "domain": "clerk.com", "category": "Identity", "asymmetric": false, "scheme": "HMAC-SHA256 (Svix)", "docs": "https://clerk.com/docs/integrations/webhooks/overview" },
+  { "name": "Svix", "domain": "svix.com", "category": "Webhook infra", "asymmetric": false, "scheme": "HMAC-SHA256", "docs": "https://docs.svix.com/receiving/verifying-payloads/how" },
+  { "name": "Linear", "domain": "linear.app", "category": "Productivity", "asymmetric": false, "scheme": "HMAC-SHA256", "docs": "https://developers.linear.app/docs/graphql/webhooks" },
+  { "name": "Discord", "domain": "discord.com", "category": "Communication", "asymmetric": true, "scheme": "Ed25519", "docs": "https://discord.com/developers/docs/interactions/overview#setting-up-an-endpoint-validating-security-request-headers" },
+  { "name": "Zoom", "domain": "zoom.us", "category": "Communication", "asymmetric": false, "scheme": "HMAC-SHA256", "docs": "https://developers.zoom.us/docs/api/webhooks/" },
+  { "name": "Square", "domain": "squareup.com", "category": "Payments", "asymmetric": false, "scheme": "HMAC-SHA256", "docs": "https://developer.squareup.com/docs/webhooks/step3validate" },
+  { "name": "Adyen", "domain": "adyen.com", "category": "Payments", "asymmetric": false, "scheme": "HMAC-SHA256", "docs": "https://docs.adyen.com/development-resources/webhooks/verify-hmac-signatures/" },
+  { "name": "Mux", "domain": "mux.com", "category": "Media", "asymmetric": false, "scheme": "HMAC-SHA256", "docs": "https://www.mux.com/docs/core/listen-for-webhooks" },
+  { "name": "Plaid", "domain": "plaid.com", "category": "Fintech", "asymmetric": true, "scheme": "JWT / ES256", "docs": "https://plaid.com/docs/api/webhooks/webhook-verification/" },
+  { "name": "Microsoft Graph", "domain": "microsoft.com", "category": "Productivity", "asymmetric": true, "scheme": "JWT + encrypted payload", "docs": "https://learn.microsoft.com/en-us/graph/webhooks-with-resource-data" },
+  { "name": "Okta", "domain": "okta.com", "category": "Identity", "asymmetric": false, "scheme": "Static header token", "docs": "https://developer.okta.com/docs/concepts/event-hooks/" }
+]
