@@ -24,18 +24,16 @@ type Provider = {
   docs: string;
 };
 
-// Color buckets by signing scheme family.
-function schemeStyle(scheme: string): string {
+// Color by security tier, not by individual scheme name.
+// Strong = asymmetric (verifiable with a public key).
+// Medium = symmetric MAC (shared secret, but cryptographically authenticated).
+// Weak = static token / shared password (no per-request signature).
+function schemeStyle(scheme: string, asymmetric: boolean): string {
+  if (asymmetric) return "bg-emerald-500/15 text-emerald-700 ring-emerald-600/20";
   const s = scheme.toLowerCase();
-  if (s.includes("ed25519")) return "bg-emerald-500/15 text-emerald-700 ring-emerald-600/20";
-  if (s.includes("es256") || s.includes("ecdsa")) return "bg-teal-500/15 text-teal-700 ring-teal-600/20";
-  if (s.includes("rs256") || s.startsWith("rsa") || s.includes(" rsa") || s.includes("jwt"))
-    return "bg-sky-500/15 text-sky-700 ring-sky-600/20";
-  if (s.includes("hmac-sha256")) return "bg-amber-500/15 text-amber-800 ring-amber-600/20";
-  if (s.includes("hmac-sha1")) return "bg-orange-500/15 text-orange-800 ring-orange-600/20";
-  if (s.includes("bearer") || s.includes("token") || s.includes("static"))
-    return "bg-rose-500/15 text-rose-700 ring-rose-600/20";
-  return "bg-muted text-muted-foreground ring-border";
+  if (s.includes("hmac") || s.includes("hs256") || s.includes("hs384") || s.includes("hs512"))
+    return "bg-amber-500/15 text-amber-800 ring-amber-600/20";
+  return "bg-rose-500/15 text-rose-700 ring-rose-600/20";
 }
 
 function Index() {
