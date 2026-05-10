@@ -95,7 +95,7 @@ function Index() {
                     <span
                       className={
                         "inline-flex items-center rounded-md px-2 py-0.5 font-mono text-xs ring-1 ring-inset " +
-                        schemeStyle(p.scheme)
+                        schemeStyle(p.scheme, p.asymmetric)
                       }
                     >
                       {p.scheme}
