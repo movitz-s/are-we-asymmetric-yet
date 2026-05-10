@@ -28,12 +28,9 @@ type Provider = {
 // Strong = asymmetric (verifiable with a public key).
 // Medium = symmetric MAC (shared secret, but cryptographically authenticated).
 // Weak = static token / shared password (no per-request signature).
-function schemeStyle(scheme: string, asymmetric: boolean): string {
+function schemeStyle(_scheme: string, asymmetric: boolean): string {
   if (asymmetric) return "bg-emerald-500/15 text-emerald-700 ring-emerald-600/20";
-  const s = scheme.toLowerCase();
-  if (s.includes("hmac") || s.includes("hs256") || s.includes("hs384") || s.includes("hs512"))
-    return "bg-amber-500/15 text-amber-800 ring-amber-600/20";
-  return "bg-rose-500/15 text-rose-700 ring-rose-600/20";
+  return "bg-red-500/15 text-red-700 ring-red-600/20";
 }
 
 function Index() {
@@ -68,12 +65,8 @@ function Index() {
             <span><span className="font-medium text-foreground">Asymmetric</span> — verifying webhooks requires no secret key material on the consumer.</span>
           </div>
           <div className="flex items-start gap-2">
-            <span className="mt-0.5 inline-block h-2.5 w-2.5 shrink-0 rounded-sm bg-amber-500/70 ring-1 ring-inset ring-amber-600/30" />
-            <span><span className="font-medium text-foreground">HMAC</span> — verifying requires a shared secret; anyone with it can forge webhooks.</span>
-          </div>
-          <div className="flex items-start gap-2">
-            <span className="mt-0.5 inline-block h-2.5 w-2.5 shrink-0 rounded-sm bg-rose-500/70 ring-1 ring-inset ring-rose-600/30" />
-            <span><span className="font-medium text-foreground">Static token</span> — no per-request signature; the secret is the only proof.</span>
+            <span className="mt-0.5 inline-block h-2.5 w-2.5 shrink-0 rounded-sm bg-red-500/70 ring-1 ring-inset ring-red-600/30" />
+            <span><span className="font-medium text-foreground">Shared secret</span> — verifying requires key material on the consumer (HMAC or static token); anyone with it can forge webhooks.</span>
           </div>
         </div>
 
