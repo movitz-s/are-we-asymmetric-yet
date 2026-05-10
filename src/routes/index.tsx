@@ -62,6 +62,21 @@ function Index() {
           </div>
         </header>
 
+        <div className="mb-4 flex flex-wrap gap-x-5 gap-y-2 rounded-lg border border-border bg-card px-4 py-3 text-xs text-muted-foreground">
+          <div className="flex items-start gap-2">
+            <span className="mt-0.5 inline-block h-2.5 w-2.5 shrink-0 rounded-sm bg-emerald-500/70 ring-1 ring-inset ring-emerald-600/30" />
+            <span><span className="font-medium text-foreground">Asymmetric</span> — verifying webhooks requires no secret key material on the consumer.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="mt-0.5 inline-block h-2.5 w-2.5 shrink-0 rounded-sm bg-amber-500/70 ring-1 ring-inset ring-amber-600/30" />
+            <span><span className="font-medium text-foreground">HMAC</span> — verifying requires a shared secret; anyone with it can forge webhooks.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="mt-0.5 inline-block h-2.5 w-2.5 shrink-0 rounded-sm bg-rose-500/70 ring-1 ring-inset ring-rose-600/30" />
+            <span><span className="font-medium text-foreground">Static token</span> — no per-request signature; the secret is the only proof.</span>
+          </div>
+        </div>
+
         <div className="overflow-hidden rounded-lg border border-border bg-card">
           <table className="w-full text-sm">
             <thead>
